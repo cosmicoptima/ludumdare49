@@ -543,6 +543,9 @@ try:
                 [b]move (y here, x here)[/b]
                   -- shakes violently
 
+                [b]move (find enemy - (1, 0)) -> shoot right -> move right -> eat[/b]
+                  -- this [i]should[/i] actually get points
+
                 I was going to add
                   1. more things to find
                   2. walls

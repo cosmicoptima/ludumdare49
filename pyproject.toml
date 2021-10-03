@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "l"
+version = "0.1.0"
+description = ""
+authors = ["Celeste Drummond <parafactual@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+rich = "^10.11.0"
+blessings = "^1.7"
+readchar = "^3.0.4"
+lark = "^0.11.3"
+numpy = "^1.21.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -72,9 +72,11 @@ dim: x | y
 x: "x" expr
 y: "y" expr
 
-find_expr: ALIVE | DEAD
+find_expr: ALIVE | DEAD | PLAYER | ENEMY
 ALIVE: "alive"
 DEAD: "dead"
+PLAYER: "player"
+ENEMY: "enemy"
 
 %ignore " " | "\\n"
 """
@@ -276,6 +278,12 @@ class Evaluate(Transformer):
 
     def DEAD(self, _):
         return lambda entity: entity["dead"]
+
+    def PLAYER(self, _):
+        return lambda entity: entity["type"] == "player"
+
+    def ENEMY(self, _):
+        return lambda entity: entity["type"] == "enemy"
 
 
 def random_cmd(entity):

@@ -7,6 +7,7 @@ from numpy import random
 import readline
 from rich.console import Console
 import sys
+from textwrap import dedent
 from time import sleep
 from uuid import uuid4
 
@@ -502,6 +503,50 @@ def main():
             entities[player_index]["active"] = False
         except:
             pass
+
+
+try:
+    with term.fullscreen():
+        console.print(
+            dedent(
+                """
+                Welcome!
+                You will code a bot; its goal is to shoot other bots and eat their dead bodies.
+
+                I didn't have time to write a good tutorial, but I do have examples:
+
+                [b]move up[/b]
+                  -- moves up every turn
+
+                [b]if tick = 0 then move (0, 0) else move down -> shoot right[/b]
+                  -- on the first turn, moves to the top left.
+                     then, alternates between moving down and shooting to the right
+
+                [b]move (tick, tick) -> eat[/b]
+                  -- moves diagonally from the top.
+                     eats anything it lands on
+
+                [b]if tick < 3 then dup random else move find dead -> eat[/b]
+                  -- find out for yourself :)
+
+                [b]move right -> move left[/b]
+                  -- shakes
+
+                [b]move (y here, x here)[/b]
+                  -- shakes violently
+
+                I was going to add
+                  1. more things to find
+                  2. walls
+                ...but I ran out of time.
+
+                Press Enter to continue.
+                """
+            )
+        )
+        input()
+except KeyboardInterrupt:
+    sys.exit()
 
 
 with term.fullscreen():

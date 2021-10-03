@@ -5,7 +5,7 @@ description = ""
 authors = ["Celeste Drummond <parafactual@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = ">=3.8,<3.11"
 rich = "^10.11.0"
 blessings = "^1.7"
 readchar = "^3.0.4"
